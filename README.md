@@ -1,4 +1,4 @@
-# PetFinder
+# PetFinder 🐶
 A full-stack website where you can find/report missing pets.
 
 ## Report a missing pet
