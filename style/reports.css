@@ -1,0 +1,110 @@
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Alata', sans-serif;
+  font-size: 35px;
+}
+h3 {
+  text-align: center;
+  background-color: #ff8a80;
+  font-family: 'Alata', sans-serif;
+  font-size: 25px;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+p, ul, label {
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+}
+/* Background styles */
+.blue-header {
+  border-radius: 20px;
+  background-color: #b0e6ff;
+}
+.blue-middle {
+  background-color: #ccedfc;
+}
+/* Anchor style */
+a {
+  font-family: 'Alata', sans-serif;
+}
+a:visited {
+  color: DarkCyan;
+}
+a:hover {
+  color: red;
+}
+a:link {
+  background-color: #cfffe4;
+  border-radius: 5px;
+}
+/* Body styling */
+body {
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #e3f6ff;
+}
+/* List styling */
+#mylist {
+  width: 85%;
+}
+#mylist li {
+
+  list-style: none;
+  padding: 0.40em;
+  border-top: 1px solid blue;
+}
+.mycenter {
+  margin: auto;
+  width: 400px;
+  text-align: center;
+  background-color: #ccb3ff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+.mycenter:hover{
+  background-color: #d3bdff;
+}
+#mylist li:hover{
+  color: white;
+  list-style-type: decimal;
+}
+
+.question {
+  font-size: 20px;
+}
+/* form component */
+.component {
+  background-color: #b0e6ff;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+/* enter button style */
+.enter-btn {
+  font-family: 'Alata', sans-serif;
+  background-color: #affac7;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+/*reset button */
+.reset-button {
+  font-family: 'Alata', sans-serif;
+  background-color: #f571b1;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}

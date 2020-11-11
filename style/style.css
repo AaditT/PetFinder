@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 30%;
+  border-radius: 20px;
+  border-style: solid;
+}
+.marker {
+  background-image: url('pin.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.pet-table {
+  width: 75%;
+  margin: auto;
+  border-style: solid;
+  border-radius: 20px;
+}
+h1 {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.home {
+  margin-left: 25px;
+}
+h2 {
+  margin-left: 12.5%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Pets </title>
+  <link href="style/reports.css" rel="stylesheet">
+</head>
+<style>
+.column {
+  float: left;
+  width: 30.3%;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 20px;
+  padding: 70px 0;
+
+}
+.column:hover {
+  border-radius: 50px;
+  background-color: #a8f6ff;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<body>
+  <h1> Welcome to PetFinder! </h1>
+  <div class="row">
+    <div class="column">
+      <a href="missing.html"> Report a missing pet </a> <br>
+    </div>
+    <div class="column">
+      <a href="found.php"> Report a found pet </a> <br>
+    </div>
+    <div class="column">
+      <a href="entries.php"> View all entries </a> <br>
+    </div>
+  </div>
+</body>
+</html>
