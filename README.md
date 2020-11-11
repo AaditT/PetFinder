@@ -1,7 +1,15 @@
 # PetFinder 🐶
 A full-stack website where you can find/report missing pets.
 
-## Overview
+## Instructions
+
+1. Download the GitHub repository
+2. Run the SQL code in `petFindSQL.sql` in phpMyAdmin to create the PetFind database
+3. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php`
+4. Have fun!
+
+## Images
+
 1. Report a missing pet
 ![Report a missing pet](https://i.imgur.com/sLAs2OP.jpg)
 
@@ -10,10 +18,3 @@ A full-stack website where you can find/report missing pets.
 
 3. View all pet entries
 ![Pet Entries Page](https://i.imgur.com/7E7ON9A.jpg)
-
-## Instructions
-
-1. Download the GitHub repository
-2. Run the SQL code in `petFindSQL.sql` in phpMyAdmin to create the PetFind database
-3. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php`
-4. Have fun!
