@@ -15,4 +15,4 @@ A full-stack website where you can find/report missing pets.
 
 1. Download the GitHub repository
 2. Run the 
-3. Create an API Key at ![Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php` 
+3. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php` 
