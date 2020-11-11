@@ -1,9 +1,9 @@
 # PetFinder 🐶
-A full-stack website where you can find/report missing pets.
+Tired of missing pet posters on tree trunks? Introducing a full-stack website where you can find/report missing pets.
 
 ## Instructions
 
-1. Download the GitHub repository
+1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind`
 2. Run the SQL code in `petFindSQL.sql` in phpMyAdmin to create the PetFind database
 3. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php`
 4. Have fun!
