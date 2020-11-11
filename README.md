@@ -1,4 +1,4 @@
-# PetFinder 🐶
+# PetFinder 🐶 (Beta Version 1.0.0)
 Tired of missing pet posters on tree trunks? Introducing a full-stack website where you can find/report missing pets.
 
 ## Instructions
