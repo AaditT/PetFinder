@@ -40,10 +40,6 @@ CREATE TABLE `found` (
 --
 -- Dumping data for table `found`
 --
-
-INSERT INTO `found` (`id`, `type`, `color`, `time_found`, `found_lat`, `found_lon`, `contact_number`) VALUES
-(1, 'Dog', 'black', '2020-10-15', '-77.032', '38.913', '222-222-2222');
-
 -- --------------------------------------------------------
 
 --
@@ -64,8 +60,6 @@ CREATE TABLE `missing` (
 -- Dumping data for table `missing`
 --
 
-INSERT INTO `missing` (`id`, `type`, `color`, `last_seen_time`, `last_seen_lat`, `last_seen_lon`, `contact_number`) VALUES
-(1, 'dog', 'brown', '2020-10-04', '-122.414', '37.776', '111-111-1111');
 
 --
 -- Indexes for dumped tables
