@@ -3,10 +3,11 @@ Tired of missing pet posters on tree trunks? Introducing PetFinder, a full-stack
 
 ## Instructions
 
-1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind`
+1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind` and move folder to lampp directory
 2. Run the SQL code in `petFindSQL.sql` in phpMyAdmin to create the PetFind database
-3. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php`
-4. Have fun!
+3. Create a SQL user with username `petfinder` and password `weHhQMCRFZAn5FcW`
+4. Create an API Key at [Mapbox](https://www.mapbox.com/) and place the key in line 222 of `entries.php`
+5. Have fun!
 
 ## Images
 
