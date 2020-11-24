@@ -95,7 +95,6 @@
 </head>
 <body>
   <h1> PetFinder </h1>
-  <a href="index.html" class="home"> &lt; Home </a> <br>
   <div id='map'></div>
 <?php
   $foundpetjson = "
