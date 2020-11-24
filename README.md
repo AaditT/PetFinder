@@ -12,15 +12,15 @@ var config = {
   MAPBOX_API_KEY: 'enter your API key here';
 }
 ```
-4. Have fun!
+5. Have fun!
 
 ## Images
 
-1. View all pet entries
+1. View all pet entries <br>
 Image coming soon...
 
-2. Report a missing pet
+2. Report a missing pet <br>
 Image coming soon...
 
-3. Report a found pet
+3. Report a found pet <br>
 Image coming soon...
