@@ -23,6 +23,17 @@
   ('$type', '$color', '$weight', '$age', '$day', '$lat', '$lon', '$contact', '$info')";
   if ($conn->query($sql) === TRUE) {
     echo "<p> New found pet added successfully </p>";
+    echo "<a href='../index.php'> Return Home </a><br>";
+    echo "<p> Entered info: </p>";
+    echo "<p> Type: $type </p>";
+    echo "<p> Color: $color </p>";
+    echo "<p> Weight: $weight </p>";
+    echo "<p> Age: $age </p>";
+    echo "<p> Day Found: $day </p>";
+    echo "<p> Latitude: $lat </p>";
+    echo "<p> Longitude: $lon </p>";
+    echo "<p> Contact: $contact </p>";
+    echo "<p> Info: $info </p>";
   } else {
     echo "<p> Error: " . $sql . "</p> <br>" . $conn->error;
   }

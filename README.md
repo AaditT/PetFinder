@@ -9,7 +9,7 @@ Tired of missing pet posters on tree trunks? Introducing PetFinder, a full-stack
 4. Create a file `config.js` and enter the following code:
 ```
 var config = {
-  MAPBOX_API_KEY = 'enter your API key here';
+  MAPBOX_API_KEY: 'enter your API key here';
 }
 ```
 4. Have fun!
@@ -17,10 +17,10 @@ var config = {
 ## Images
 
 1. View all pet entries
-![Pet Entries Page](https://i.imgur.com/7E7ON9A.jpg)
+Image coming soon...
 
 2. Report a missing pet
-![Report a missing pet](https://i.imgur.com/sLAs2OP.jpg)
+Image coming soon...
 
 3. Report a found pet
-![Report a found pet](https://i.imgur.com/miWO3Yw.jpg)
+Image coming soon...

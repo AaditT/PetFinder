@@ -5,14 +5,18 @@
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script type='text/javascript' src='config.js'></script>
+
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-
+    <link rel="stylesheet" href="style/style.css">
+    <script src='config.js'>
+      console.log(config);
+    </script>
     <style>
       body {
         margin: 0;
         padding: 0;
+        padding-bottom: 100px;
       }
       #map {
         margin: auto;
