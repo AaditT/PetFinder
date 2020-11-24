@@ -23,7 +23,7 @@
         top: 0;
         bottom: 0;
         width: 80%;
-        height: 30%;
+        height: 250px;
         border-radius: 20px;
         border-style: solid;
       }
