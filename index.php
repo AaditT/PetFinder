@@ -5,10 +5,9 @@
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type='text/javascript' src='config.js'></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' rel='stylesheet'/>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
     <style>
       body {
@@ -19,7 +18,7 @@
         margin: auto;
         top: 0;
         bottom: 0;
-        width: 50%;
+        width: 80%;
         height: 30%;
         border-radius: 20px;
         border-style: solid;
@@ -49,13 +48,12 @@
         font-family: 'Open Sans', sans-serif;
       }
       .pet-table {
-        width: 50%;
+        width: 80%;
         margin: auto;
         border-style: solid;
         border-radius: 20px;
       }
       h1 {
-        font-family: 'Nunito', sans-serif;
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -64,8 +62,9 @@
         margin-left: 25px;
       }
       h2 {
-        margin-left: 25%;
+        margin-left: 10%;
         padding-left: 20px;
+        font-size: 20px;
       }
       .missing-field {
         background-color: #ffcdc7;
@@ -77,31 +76,47 @@
         border-radius: 20px;
         width: 200px;
       }
+      a {
+        padding-left: 10%
+      }
+      a:visited {
+        text-decoration: none;
+      }
+
+      td {
+        text-align: center;
+      }
+
     </style>
 </head>
 <body>
-  <h1> View all entries </h1>
+  <h1> PetFinder </h1>
   <a href="index.html" class="home"> &lt; Home </a> <br>
   <div id='map'></div>
 <?php
   $foundpetjson = "
   {type: 'FeatureCollection',
   features: [";
-  $servername = "192.168.64.2";
-  $username = "petfinder";
-  $pwd = "weHhQMCRFZAn5FcW";
+  $servername = "localhost";
+  $username = "root";
+  $pwd = "";
   $db = "pet_find";
   $conn = new mysqli($servername, $username, $pwd, $db);
   if ($conn->connect_error)
   {
     die("Connection failed: " . $conn->connect_error);
   }
-  $sql = "SELECT type, color, time_found, found_lat, found_lon,
-  contact_number FROM found";
-  $result = $conn->query($sql); ?>
+  $sql = "SELECT type, color, weight, age, day, lat, lon,
+  contact, info FROM found";
+  $result = $conn->query($sql);
+  ?>
 
   <br>
   <br>
+  <div class="report">
+    <a href="foundForm.php"> Report a found pet </a> <br>
+    <a href="missingForm.php"> Report a missing pet </a> <br> <br>
+  </div>
 
 
   <table class="table table-striped pet-table">
@@ -110,10 +125,13 @@
       <tr>
         <th scope="col">Type</th>
         <th scope="col">Color</th>
-        <th scope="col">Day Found</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Age</th>
+        <th scope="col">Last Seen Time</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Contact Number</th>
+        <th scope="col">Additonal Info</th>
       </tr>
     </thead>
     <tbody>
@@ -124,22 +142,29 @@
     {
       $type = $row["type"];
       $color = $row["color"];
-      $timeFound = $row["time_found"];
-      $foundLat = $row["found_lat"];
-      $foundLon = $row["found_lon"];
-      $contactNumber = $row["contact_number"];
-      echo "<tr><td>$type</td><td>$color</td><td>$timeFound</td><td>$foundLat
-      </td><td>$foundLon</td><td>$contactNumber</td></tr>";
+      $weight = $row["weight"];
+      $age = $row["age"];
+      $day = $row["day"];
+      $lat = $row["lat"];
+      $lon = $row["lon"];
+      $info = $row["info"];
+      $contact = $row["contact"];
+      $customURL = "moreInfo.php?type=$type&color=$color"
+      . "&weight=$weight&age=$age&day=$day"
+      . "&lat=$lat&lon=$lon&contact=$contact"
+      . "&info=$info";
+      echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat ".
+      "</td><td>$lon</td><td>$contact</td><td><a href='$customURL'>View</a></td></tr>";
       $foundpetjson = $foundpetjson .
       "{
         type: 'Feature',
         geometry: {
           type: 'Point',
-          coordinates: [$foundLat, $foundLon]
+          coordinates: [$lat, $lon]
         },
         properties: {
           title: '$type',
-          description: 'Contact No.: $contactNumber'
+          description: 'Contact No.: $contact'
         }
       },";
 
@@ -155,17 +180,17 @@
   $missingpetjson = "
   {type: 'FeatureCollection',
   features: [";
-  $servername = "192.168.64.2";
-  $username = "petfinder";
-  $pwd = "weHhQMCRFZAn5FcW";
+  $servername = "localhost";
+  $username = "root";
+  $pwd = "";
   $db = "pet_find";
   $conn = new mysqli($servername, $username, $pwd, $db);
   if ($conn->connect_error)
   {
     die("Connection failed: " . $conn->connect_error);
   }
-  $sql = "SELECT type, color, last_seen_time, last_seen_lat, last_seen_lon,
-  contact_number FROM missing";
+  $sql = "SELECT type, color, weight, age, day, lat, lon,
+  contact, info FROM missing";
   $mresult = $conn->query($sql); ?>
 
 
@@ -176,10 +201,13 @@
       <tr>
         <th scope="col">Type</th>
         <th scope="col">Color</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Age</th>
         <th scope="col">Last Seen Time</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Contact Number</th>
+        <th scope="col">Additional Info</th>
       </tr>
     </thead>
     <tbody>
@@ -190,22 +218,28 @@
     {
       $type = $row["type"];
       $color = $row["color"];
-      $timeFound = $row["last_seen_time"];
-      $foundLat = $row["last_seen_lat"];
-      $foundLon = $row["last_seen_lon"];
-      $contactNumber = $row["contact_number"];
-      echo "<tr><td>$type</td><td>$color</td><td>$timeFound</td><td>$foundLat
-      </td><td>$foundLon</td><td>$contactNumber</td></tr>";
+      $weight = $row["weight"];
+      $age = $row["age"];
+      $day = $row["day"];
+      $lat = $row["lat"];
+      $lon = $row["lon"];
+      $contact = $row["contact"];
+      $customURL = "moreInfo.php?type=$type&color=$color"
+      . "&weight=$weight&age=$age&day=$day"
+      . "&lat=$lat&lon=$lon&contact=$contact"
+      . "&info=$info";
+      echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat
+      </td><td>$lon</td><td>$contact</td><td><a href='$customURL'>View</a></td></tr>";
       $missingpetjson = $missingpetjson .
       "{
         type: 'Feature',
         geometry: {
           type: 'Point',
-          coordinates: [$foundLat, $foundLon]
+          coordinates: [$lat, $lon]
         },
         properties: {
           title: '$type',
-          description: 'Contact No.: $contactNumber'
+          description: 'Contact No.: $contact'
         }
       },";
 
@@ -220,7 +254,7 @@
 
 <script>
 // Amazing tutorial : https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWFkaXQxMjMiLCJhIjoiY2tjOWR0MXdnMTY1bjJ3cXBubmN1Z2E0ayJ9.GtgrMOfGeP3QJ7x-4ep62A';
+mapboxgl.accessToken = config.MAPBOX_API_KEY;
 
 var map = new mapboxgl.Map({
   container: 'map',

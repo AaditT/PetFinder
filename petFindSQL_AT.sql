@@ -33,10 +33,12 @@ CREATE TABLE `found` (
   `id` int(11) NOT NULL,
   `type` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
-  `time_found` date DEFAULT NULL,
-  `found_lat` varchar(50) DEFAULT NULL,
-  `found_lon` varchar(50) DEFAULT NULL,
-  `contact_number` varchar(50) NOT NULL
+  `weight` varchar (10) DEFAULT NULL,
+  `age` varchar (10) DEFAULT NULL,
+  `day` date DEFAULT NULL,
+  `lat` varchar(50) DEFAULT NULL,
+  `lon` varchar(50) DEFAULT NULL,
+  `contact` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -52,10 +54,12 @@ CREATE TABLE `missing` (
   `id` int(11) NOT NULL,
   `type` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
-  `last_seen_time` date DEFAULT NULL,
-  `last_seen_lat` varchar(50) DEFAULT NULL,
-  `last_seen_lon` varchar(50) DEFAULT NULL,
-  `contact_number` varchar(50) NOT NULL
+  `weight` varchar (10) DEFAULT NULL,
+  `age` varchar (10) DEFAULT NULL,
+  `day` date DEFAULT NULL,
+  `lat` varchar(50) DEFAULT NULL,
+  `lon` varchar(50) DEFAULT NULL,
+  `contact` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
