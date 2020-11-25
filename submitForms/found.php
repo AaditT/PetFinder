@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <h1> New found pet added successfully </h1>
+  <a href="../index.php"> &lt; Home </a> <br> <br>
+<div class="outer-component">
+  <div class="more-info-component">
+
 <?php
   $type = $_GET["type"];
   $color = $_GET["color"];
@@ -22,20 +33,21 @@
   $sql = "INSERT INTO `found` (`type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`) VALUES
   ('$type', '$color', '$weight', '$age', '$day', '$lat', '$lon', '$contact', '$info')";
   if ($conn->query($sql) === TRUE) {
-    echo "<p> New found pet added successfully </p>";
-    echo "<a href='../index.php'> Return Home </a><br>";
-    echo "<p> Entered info: </p>";
-    echo "<p> Type: $type </p>";
-    echo "<p> Color: $color </p>";
-    echo "<p> Weight: $weight </p>";
-    echo "<p> Age: $age </p>";
-    echo "<p> Day Found: $day </p>";
-    echo "<p> Latitude: $lat </p>";
-    echo "<p> Longitude: $lon </p>";
-    echo "<p> Contact: $contact </p>";
-    echo "<p> Info: $info </p>";
+    echo "<p class='label'> Type</p><p class='value'> $type </p><br><br>";
+    echo "<p class='label'> Color</p>:<p class='value'> $color </p><br><br>";
+    echo "<p class='label'> Weight (kg)</p>:<p class='value'> $weight </p><br><br>";
+    echo "<p class='label'> Age (yrs)</p>:<p class='value'> $age </p><br><br>";
+    echo "<p class='label'> Day<p class='value'> $day </p><br><br>";
+    echo "<p class='label'> Latitude</p>:<p class='value'> $lat </p><br><br>";
+    echo "<p class='label'> Longitude</p>:<p class='value'> $lon </p><br><br>";
+    echo "<p class='label'> Contact Number</p>:<p class='value'> $contact </p><br><br>";
+    echo "<p class='label'> Additional Info</p>:<p class='value'> $info </p><br><br>";
   } else {
     echo "<p> Error: " . $sql . "</p> <br>" . $conn->error;
   }
   $conn->close();
 ?>
+</div>
+</div>
+</body>
+</html>
