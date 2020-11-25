@@ -17,7 +17,7 @@ var config = {
 ## Images
 
 1. View all pet entries <br>
-Image coming soon...
+![All entries](blob:https://imgur.com/7642b4bc-b91a-4c18-9fd7-3d576fefa625)
 
 2. Report a missing pet <br>
 Image coming soon...
