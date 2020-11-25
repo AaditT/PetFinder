@@ -143,7 +143,7 @@
         <th scope="col">Color</th>
         <th scope="col">Weight</th>
         <th scope="col">Age</th>
-        <th scope="col">Last Seen Time</th>
+        <th scope="col">Day Found</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Contact Number</th>
@@ -187,7 +187,7 @@
         },
         properties: {
           title: '$type',
-          description: '<b> Color </b>: $color <br><b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
+          description: '<b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
         }
       },";
 
@@ -226,7 +226,7 @@
         <th scope="col">Color</th>
         <th scope="col">Weight</th>
         <th scope="col">Age</th>
-        <th scope="col">Last Seen Time</th>
+        <th scope="col">Last Seen Day</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Contact Number</th>
@@ -267,7 +267,7 @@
         },
         properties: {
           title: '$type',
-          description: '<b> Color </b>: $color <br><b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
+          description: '<b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
         }
       },";
 

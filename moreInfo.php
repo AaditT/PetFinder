@@ -5,6 +5,7 @@
 </head>
 <body>
   <h1> More Info </h1>
+  <a href="index.php"> &lt; Home </a> <br> <br>
 <div class="outer-component">
   <div class="more-info-component">
 <?php
@@ -25,10 +26,10 @@
   echo "<p class='label'> Weight (kg)</p>:<p class='value'> $weight </p><br><br>";
   echo "<p class='label'> Age (yrs)</p>:<p class='value'> $age </p><br><br>";
   echo "<p class='label'> Day<p class='value'> $day </p><br><br>";
-  echo "<p class='label'> Lat</p>:<p class='value'> $lat </p><br><br>";
-  echo "<p class='label'> Lon</p>:<p class='value'> $lon </p><br><br>";
-  echo "<p class='label'> Contact</p>:<p class='value'> $contact </p><br><br>";
-  echo "<p class='label'> Info</p>:<p class='value'> $info </p><br><br>";
+  echo "<p class='label'> Latitude</p>:<p class='value'> $lat </p><br><br>";
+  echo "<p class='label'> Longitude</p>:<p class='value'> $lon </p><br><br>";
+  echo "<p class='label'> Contact Number</p>:<p class='value'> $contact </p><br><br>";
+  echo "<p class='label'> Additional Info</p>:<p class='value'> $info </p><br><br>";
 
 
 ?>
