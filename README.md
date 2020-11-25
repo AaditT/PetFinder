@@ -19,8 +19,8 @@ var config = {
 1. View all pet entries <br>
 ![All entries](https://i.imgur.com/Ks0SQgr.jpg)
 
-2. Report a missing pet <br>
-Image coming soon...
+2. Report a found/missing pet <br>
+![Report a found/missing pet](https://i.imgur.com/GUu05lZ.jpg)
 
-3. Report a found pet <br>
-Image coming soon...
+3. View pet details <br>
+![View pet details](https://i.imgur.com/d6MlomB.jpg)
