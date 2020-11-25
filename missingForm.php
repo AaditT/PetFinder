@@ -3,15 +3,16 @@
 <html lang="en">
 <head>
   <title> Pets </title>
-  <link href="style/reports.css" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1> Report a missing! </h1>
+  <h1> Report a missing pet! </h1>
   <a href="index.php"> &lt; Home </a> <br> <br>
+<div class="form-outer">
+  <div class="entry-form">
   <form method="GET" action="submitForms/missing.php">
     <div class="component">
-      <p class="question"> Pet Info </p>
-      <p> Please enter some info.</p>
+
       <label for="type"> Pet Type </label>
       <input id="type" type="text" name="type" placeholder="Dog"><br><br>
       <label for="color"> Pet Color </label>
@@ -43,5 +44,7 @@
     <input type="submit" class="enter-btn"> <br>
 
   </form>
+</div>
+</div>
 </body>
 </html>

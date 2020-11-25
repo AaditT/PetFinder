@@ -169,8 +169,15 @@
       . "&weight=$weight&age=$age&day=$day"
       . "&lat=$lat&lon=$lon&contact=$contact"
       . "&info=$info";
-      echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat ".
+
+
+      // This is the code that creates the missing pet table
+      echo "<tr><td>$type</td><td>$color</td><td>$weight kg</td><td>$age yrs</td><td>$day</td><td>$lat ".
       "</td><td>$lon</td><td>$contact</td><td><a href='$customURL'>View</a></td></tr>";
+
+      // This is the code that creates the JSON for the found pet pins
+      // for the map
+
       $foundpetjson = $foundpetjson .
       "{
         type: 'Feature',
@@ -244,8 +251,13 @@
       . "&weight=$weight&age=$age&day=$day"
       . "&lat=$lat&lon=$lon&contact=$contact"
       . "&info=$info";
-      echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat
+
+      // This is the code that creates the missing pet table
+      echo "<tr><td>$type</td><td>$color</td><td>$weight kg</td><td>$age yrs</td><td>$day</td><td>$lat
       </td><td>$lon</td><td>$contact</td><td><a href='$customURL'>View</a></td></tr>";
+
+      // This is the code that creates the JSON for the missing pet pins
+      // for the map
       $missingpetjson = $missingpetjson .
       "{
         type: 'Feature',
@@ -272,6 +284,7 @@
 // Amazing tutorial : https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
 mapboxgl.accessToken = config.MAPBOX_API_KEY;
 
+// This is the JS code that creates the map
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v10',
@@ -282,6 +295,7 @@ var map = new mapboxgl.Map({
 // code from the next step will go here!
 var foundgeojson = <?php echo $foundpetjson ?>;
 var missinggeojson = <?php echo $missingpetjson ?>;
+
 // add markers to map
 foundgeojson.features.forEach(function(marker) {
 
@@ -289,10 +303,10 @@ foundgeojson.features.forEach(function(marker) {
   var el = document.createElement('div');
   el.className = 'found-marker';
 
-  // make a marker for each feature and add to the map
+  // This is for the map element of found pets
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
-    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setPopup(new mapboxgl.Popup({ offset: 25 })
     .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
     .addTo(map);
 });
@@ -302,7 +316,7 @@ missinggeojson.features.forEach(function(marker) {
   var ell = document.createElement('div');
   ell.className = 'missing-marker';
 
-  // make a marker for each feature and add to the map
+  // This is for the amp element of missing pets
   new mapboxgl.Marker(ell)
     .setLngLat(marker.geometry.coordinates)
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups

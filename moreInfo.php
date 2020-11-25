@@ -3,6 +3,10 @@
 <head>
   <link rel="stylesheet" href="style/style.css">
 </head>
+<body>
+  <h1> More Info </h1>
+<div class="outer-component">
+  <div class="more-info-component">
 <?php
   $type = $_GET["type"];
   $color = $_GET["color"];
@@ -16,16 +20,19 @@
   // Below code for debugging purposes
   // echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat
   // </td><td>$lon</td><td>$contact</td></tr>";
-  echo "<p> Type: $type </p>";
-  echo "<p> Color: $color </p>";
-  echo "<p> Weight: $weight </p>";
-  echo "<p> Age: $age </p>";
-  echo "<p> Day: $day </p>";
-  echo "<p> Lat: $lat </p>";
-  echo "<p> Lon: $lon </p>";
-  echo "<p> Contact: $contact </p>";
-  echo "<p> Info: $info </p>";
+  echo "<p class='label'> Type</p><p class='value'> $type </p><br><br>";
+  echo "<p class='label'> Color</p>:<p class='value'> $color </p><br><br>";
+  echo "<p class='label'> Weight (kg)</p>:<p class='value'> $weight </p><br><br>";
+  echo "<p class='label'> Age (yrs)</p>:<p class='value'> $age </p><br><br>";
+  echo "<p class='label'> Day<p class='value'> $day </p><br><br>";
+  echo "<p class='label'> Lat</p>:<p class='value'> $lat </p><br><br>";
+  echo "<p class='label'> Lon</p>:<p class='value'> $lon </p><br><br>";
+  echo "<p class='label'> Contact</p>:<p class='value'> $contact </p><br><br>";
+  echo "<p class='label'> Info</p>:<p class='value'> $info </p><br><br>";
 
 
 ?>
+</div>
+</div>
+</body>
 </html>
