@@ -5,18 +5,48 @@
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Dosis:wght@300;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="style/style.css">
-    <script src='config.js'>
-      console.log(config);
-    </script>
+    <script src='config.js'></script>
     <style>
       body {
         margin: 0;
         padding: 0;
         padding-bottom: 100px;
+      }
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-family: 'Assistant', sans-serif;
+        margin-left: 10%;
+        padding-left: 20px;
+        font-size: 20px;
+      }
+      a, a:visited, a:link, a:after {
+        font-family: 'Assistant', sans-serif;
+        padding-left: 10%;
+        text-decoration: none;
+        text-decoration: none;
+        color: #489df7;
+      }
+
+      td {
+        text-align: center;
+      }
+      p, td {
+        font-family: 'Assistant', sans-serif;
+      }
+      th {
+        font-family: 'Assistant', sans-serif;
+        background-color: #a6e3ff;
+        border-radius: 5px;
       }
       #map {
         margin: auto;
@@ -44,52 +74,35 @@
         cursor: pointer;
       }
       .mapboxgl-popup {
-        max-width: 200px;
+        width: 200px;
       }
 
       .mapboxgl-popup-content {
         text-align: center;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Poppins', sans-serif;
       }
       .pet-table {
         width: 80%;
         margin: auto;
         border-style: solid;
-        border-radius: 20px;
+        border-radius: 5px;
       }
-      h1 {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-      .home {
-        margin-left: 25px;
-      }
-      h2 {
-        margin-left: 10%;
-        padding-left: 20px;
-        font-size: 20px;
-      }
+
+
+
+
       .missing-field {
         background-color: #ffcdc7;
         border-radius: 20px;
-        width: 220px;
+        width: 150px;
       }
       .found-field {
         background-color: #C6E8C4;
         border-radius: 20px;
-        width: 200px;
-      }
-      a {
-        padding-left: 10%
-      }
-      a:visited {
-        text-decoration: none;
+        width: 150px;
       }
 
-      td {
-        text-align: center;
-      }
+
 
     </style>
 </head>
@@ -167,7 +180,7 @@
         },
         properties: {
           title: '$type',
-          description: 'Contact No.: $contact'
+          description: '<b> Color </b>: $color <br><b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
         }
       },";
 
@@ -242,7 +255,7 @@
         },
         properties: {
           title: '$type',
-          description: 'Contact No.: $contact'
+          description: '<b> Color </b>: $color <br><b> Color </b>: $color <br><b> Weight </b>: $weight <br><b> Age </b>: $age <br><b> Day Found </b>: $day <br><b> Contact </b>: $contact'
         }
       },";
 
