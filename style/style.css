@@ -99,8 +99,28 @@ th {
   background-color: #a6e3ff;
   border-radius: 20px;
 }
+.center-form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25%;
+  padding-right: 25%;
+  background-color: #a6e3ff;
+  border-radius: 50px;
+}
+.admin-component {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  background-color: #a6e3ff;
+  border-radius: 20px;
+  background-color: #a1ff9c;
+}
 
 .form-outer, .outer-component {
   padding-left: 40px;
   padding-right: 40px;
+}
+.center-form-outer {
+  padding-left: 20%;
+  padding-right: 20%;
 }

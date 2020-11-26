@@ -139,15 +139,15 @@
     <thead>
       <h2 class="found-field"> Found Pets </h2>
       <tr>
-        <th scope="col">Type</th>
-        <th scope="col">Color</th>
-        <th scope="col">Weight</th>
-        <th scope="col">Age</th>
-        <th scope="col">Day Found</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-        <th scope="col">Contact Number</th>
-        <th scope="col">Additonal Info</th>
+        <th>Type</th>
+        <th>Color</th>
+        <th>Weight</th>
+        <th>Age</th>
+        <th>Day Found</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Contact Number</th>
+        <th>Additonal Info</th>
       </tr>
     </thead>
     <tbody>
@@ -222,15 +222,15 @@
       <br>
       <h2 class="missing-field"> Missing Pets </h2>
       <tr>
-        <th scope="col">Type</th>
-        <th scope="col">Color</th>
-        <th scope="col">Weight</th>
-        <th scope="col">Age</th>
-        <th scope="col">Last Seen Day</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-        <th scope="col">Contact Number</th>
-        <th scope="col">Additional Info</th>
+        <th>Type</th>
+        <th>Color</th>
+        <th>Weight</th>
+        <th>Age</th>
+        <th>Last Seen Day</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Contact Number</th>
+        <th>Additional Info</th>
       </tr>
     </thead>
     <tbody>
@@ -247,6 +247,7 @@
       $lat = $row["lat"];
       $lon = $row["lon"];
       $contact = $row["contact"];
+      $info = $row["info"];
       $customURL = "moreInfo.php?type=$type&color=$color"
       . "&weight=$weight&age=$age&day=$day"
       . "&lat=$lat&lon=$lon&contact=$contact"
@@ -330,6 +331,6 @@ missinggeojson.features.forEach(function(marker) {
 </tbody>
 </table>
 
-
+<br> <br> <a href='admin/adminLogin.php'>Admin</a>
 </body>
 </html>

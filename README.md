@@ -13,6 +13,7 @@ var config = {
 }
 ```
 5. Have fun!
+6. Use admin page with username `admin` and password `root` to delete entries
 
 ## Images
 
@@ -24,3 +25,6 @@ var config = {
 
 3. View pet details <br>
 ![View pet details](https://i.imgur.com/d6MlomB.jpg)
+
+4. Admin Page <br>
+![Admin Page](https://i.imgur.com/zHFyQDz.jpg)
