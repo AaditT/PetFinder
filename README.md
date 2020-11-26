@@ -12,8 +12,8 @@ var config = {
   MAPBOX_API_KEY: 'enter your API key here';
 }
 ```
-5. Have fun!
-6. Use admin page with username `admin` and password `root` to delete entries
+5. Use admin page with username `admin` and password `root` to delete entries
+6. Have fun!
 
 ## Images
 
