@@ -130,8 +130,8 @@
   <br>
   <br>
   <div class="report">
-    <a href="foundForm.php"> Report a found pet </a> <br>
-    <a href="missingForm.php"> Report a missing pet </a> <br> <br>
+    <a href="entryForms/foundForm.php"> Report a found pet </a> <br>
+    <a href="entryForms/missingForm.php"> Report a missing pet </a> <br> <br>
   </div>
 
 
