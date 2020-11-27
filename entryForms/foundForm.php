@@ -3,11 +3,11 @@
 <html lang="en">
 <head>
   <title> Pets </title>
-  <link href="style/style.css" rel="stylesheet">
+  <link href="../style/style.css" rel="stylesheet">
 </head>
 <body>
   <h1> Report a pet you found! </h1>
-  <a href="index.php"> &lt; Home </a> <br> <br>
+  <a href="../index.php"> &lt; Home </a> <br> <br>
   <div class="form-outer">
     <div class="entry-form">
       <form method="GET" action="found.php">
@@ -33,7 +33,9 @@
           <br><br>
           <label for="lon"> Found Location Longitude </label>
           <input id="lon" type="text" name="lon" placeholder="36.123">
-          <br><br>
+          <br>
+          <p class="latlon-msg"> Having trouble with lat/lon coordinates? Use this link:<a href="https://www.latlong.net/"> https://www.latlong.net/</a></p>
+          <br>
           <label for="contact"> Contact Phone Number (Please match format)</label>
           <input id="contact" type="tel" placeholder="000-000-0000" name="contact"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">

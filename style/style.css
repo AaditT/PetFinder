@@ -124,3 +124,6 @@ th {
   padding-left: 20%;
   padding-right: 20%;
 }
+p.latlon-msg {
+  font-size: 12px;
+}
