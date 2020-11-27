@@ -17,6 +17,13 @@ var config = {
 5. Use admin page with username `admin` and password `root` to delete entries
 6. Have fun!
 
+## Self-Evaluation
+I am really proud of the Mapbox feature which was really interesting to develop
+because I had to build a customized JavaScript query for the API using PHP data.
+In the future, I plan on working on a method to automate the connection process.
+It would be nice to have the petowner and pet"finder" connect on the website
+instead on relying on contact phone numbers.
+
 ## Images
 
 1. View all pet entries <br>
