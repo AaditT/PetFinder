@@ -44,8 +44,8 @@
           <br><br>
         </div> <br>
         <input type="submit" class="enter-btn"> <br>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 </body>
 </html>

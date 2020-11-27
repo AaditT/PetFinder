@@ -1,6 +1,8 @@
 # PetFinder 🐶
 Tired of missing pet posters on tree trunks? Introducing PetFinder, a full-stack website where you can find/report missing pets.
 
+Find the code and `README.md` at https://github.com/AaditT/PetFinder
+
 ## Instructions
 
 1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind` and move folder to XAMPP directory
