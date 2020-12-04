@@ -12,7 +12,7 @@
 
       <?php
 
-      require('config.php');
+      require('../config.php');
       $type = $_GET["type"];
       $color = $_GET["color"];
       $weight = $_GET["weight"];
@@ -24,7 +24,7 @@
       $info = $_GET["info"];
       // echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat
       // </td><td>$lon</td><td>$contact</td></tr>";
-      
+
       $conn = new mysqli($servername, $username, $pwd, $db);
       if ($conn->connect_error)
       {

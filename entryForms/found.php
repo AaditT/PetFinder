@@ -11,7 +11,7 @@
     <div class="more-info-component">
 
       <?php
-      require('config.php');
+      require('../config.php');
       $type = $_GET["type"];
       $color = $_GET["color"];
       $weight = $_GET["weight"];

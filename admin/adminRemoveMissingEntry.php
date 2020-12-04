@@ -24,7 +24,7 @@
       $contact = $_GET["contact"];
       $info = $_GET["info"];
 
-      require('adminConfig.php');
+      require('../config.php');
       $conn = new mysqli($servername, $username, $pwd, $db);
       if ($conn->connect_error) {
         die("<p> Issue with the connection: " . $conn->connect_error . "</p>");

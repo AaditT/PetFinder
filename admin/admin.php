@@ -114,7 +114,7 @@
     <?php
 
     // Connecting to the database
-    require('adminConfig.php');
+    require('../config.php');
     $conn = new mysqli($servername, $username, $pwd, $db);
     if ($conn->connect_error)
     {
