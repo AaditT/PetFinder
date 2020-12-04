@@ -110,13 +110,12 @@
   <h1> PetFinder </h1>
   <div id='map'></div>
   <?php
+
+  require('config.php');
   $foundpetjson = "
   {type: 'FeatureCollection',
     features: [";
-    $servername = "localhost";
-    $username = "root";
-    $pwd = "";
-    $db = "pet_find";
+
     $conn = new mysqli($servername, $username, $pwd, $db);
     if ($conn->connect_error)
     {

@@ -114,11 +114,7 @@
     <?php
 
     // Connecting to the database
-    $servername = "localhost";
-    $username = "root";
-    $pwd = "";
-    $db = "pet_find";
-    $conn = new mysqli($servername, $username, $pwd, $db);
+    require('adminConfig.php');
     $conn = new mysqli($servername, $username, $pwd, $db);
     if ($conn->connect_error)
     {

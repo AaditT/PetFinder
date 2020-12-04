@@ -24,10 +24,7 @@
       $contact = $_GET["contact"];
       $info = $_GET["info"];
 
-      $servername = "localhost";
-      $username = "root";
-      $pwd = "";
-      $db = "pet_find";
+      require('adminConfig.php');
       $conn = new mysqli($servername, $username, $pwd, $db);
       if ($conn->connect_error) {
         die("<p> Issue with the connection: " . $conn->connect_error . "</p>");
