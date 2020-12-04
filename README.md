@@ -6,16 +6,17 @@ Find the code and `README.md` at https://github.com/AaditT/PetFinder
 ## Instructions
 
 1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind` and move folder to XAMPP directory
-2. Run the SQL code in `sql/petFindSQL.sql` in phpMyAdmin to create the PetFind database
-3. Create an API Key at [Mapbox](https://www.mapbox.com/)
-4. Create a file `config.js` and enter the following code:
+2. Run the SQL code in `sql/petFindSQL.sql` in phpMyAdmin to create the pet_find database
+3. Create a user `Pet_Us3r` with password `i89oUYsl0X8sgo3c` in phpMyAdmin for the pet_find database
+4. Create an API Key at [Mapbox](https://www.mapbox.com/)
+5. Create a file `config.js` and enter the following code:
 ```
 var config = {
   MAPBOX_API_KEY: 'enter your API key here';
 }
 ```
-5. Use admin page with username `admin` and password `root` to delete entries
-6. Have fun!
+6. Use admin page with username `admin` and password `root` to delete entries
+7. Have fun!
 
 ## Self-Evaluation
 I am really proud of the Mapbox feature which was really interesting to develop
