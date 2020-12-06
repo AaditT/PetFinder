@@ -12,6 +12,14 @@
 
       <?php
       require('../config.php');
+      // Checks if user is logged in
+      session_start();
+      	if(!isset($_SESSION['username'])) {
+      		header("Location: ../userAuth/loginForm.html");
+      	} else {
+          $displayName = $_SESSION['name'];
+          $account_id = $_SESSION['username'];
+        }
       $type = $_GET["type"];
       $color = $_GET["color"];
       $weight = $_GET["weight"];
@@ -29,8 +37,9 @@
       {
         die("Connection failed: " . $conn->connect_error);
       }
-      $sql = "INSERT INTO `found` (`type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`) VALUES
-      ('$type', '$color', '$weight', '$age', '$day', '$lat', '$lon', '$contact', '$info')";
+      $displaySetting = TRUE;
+      $sql = "INSERT INTO `found` (`type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`, `account_id`, `display`) VALUES
+      ('$type', '$color', '$weight', '$age', '$day', '$lat', '$lon', '$contact', '$info', '$account_id', '$displaySetting')";
       if ($conn->query($sql) === TRUE) {
         echo "<p class='label'> Type</p><p class='value'> $type </p><br><br>";
         echo "<p class='label'> Color</p>:<p class='value'> $color </p><br><br>";

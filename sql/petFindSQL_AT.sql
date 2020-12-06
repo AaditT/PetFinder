@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 04, 2020 at 07:34 PM
+-- Generation Time: Dec 04, 2020 at 08:32 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `pet_find`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `account_id` int(10) UNSIGNED NOT NULL,
+  `account_name` varchar(255) NOT NULL,
+  `account_passwd` varchar(255) NOT NULL,
+  `account_reg_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `account_enabled` tinyint(1) UNSIGNED NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account_sessions`
+--
+
+CREATE TABLE `account_sessions` (
+  `session_id` varchar(255) NOT NULL,
+  `account_id` int(10) UNSIGNED NOT NULL,
+  `login_time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -79,6 +105,19 @@ INSERT INTO `missing` (`id`, `type`, `color`, `weight`, `age`, `day`, `lat`, `lo
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`account_id`),
+  ADD UNIQUE KEY `account_name` (`account_name`);
+
+--
+-- Indexes for table `account_sessions`
+--
+ALTER TABLE `account_sessions`
+  ADD PRIMARY KEY (`session_id`);
+
+--
 -- Indexes for table `found`
 --
 ALTER TABLE `found`
@@ -93,6 +132,12 @@ ALTER TABLE `missing`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `account_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `found`

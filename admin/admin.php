@@ -40,14 +40,13 @@
   $pwd = "";
   $db = "pet_find";
   $conn = new mysqli($servername, $username, $pwd, $db);
-  $conn = new mysqli($servername, $username, $pwd, $db);
   if ($conn->connect_error)
   {
     die("Connection failed: " . $conn->connect_error);
   }
   // SQL query to display the pet entries
   $sql = "SELECT id, type, color, weight, age, day, lat, lon,
-  contact, info FROM missing";
+  contact, info, display FROM missing WHERE display = 1";
   $mresult = $conn->query($sql);
   ?>
 
@@ -121,7 +120,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
     $sql = "SELECT id, type, color, weight, age, day, lat, lon,
-    contact, info FROM found";
+    contact, info, display FROM found WHERE display = 1";
     $mresult = $conn->query($sql);
     ?>
 

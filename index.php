@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8' />
-  <title></title>
+  <title>PetFinder</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -107,6 +107,7 @@
   </style>
 </head>
 <body>
+
   <h1> PetFinder </h1>
   <div id='map'></div>
   <?php
@@ -122,13 +123,26 @@
       die("Connection failed: " . $conn->connect_error);
     }
     $sql = "SELECT type, color, weight, age, day, lat, lon,
-    contact, info FROM found";
+    contact, info, display FROM found WHERE display = 1";
     $result = $conn->query($sql);
     ?>
 
     <br>
     <br>
+
     <div class="report">
+      <?php
+      session_start();
+      	if(isset($_SESSION['username'])) {
+          $displayName = $_SESSION['name'];
+          echo '<p style="padding-left:10%;"> Signed in as: ' . $displayName . '</p>';
+          echo'<a href="userProfile/myProfile.php"> My Profile </a> <br><br>';
+        } else {
+          echo '<p style="padding-left:10%;"> Not signed in </p>';
+          echo '<a href="userAuth/loginForm.html"> Login </a><br>';
+          echo '<a href="userAuth/signupForm.html"> Signup </a><br><br>';
+        }
+      ?>
       <a href="entryForms/foundForm.php"> Report a found pet </a> <br>
       <a href="entryForms/missingForm.php"> Report a missing pet </a> <br> <br>
     </div>
@@ -193,7 +207,7 @@
           }
           $foundpetjson = $foundpetjson . "]};";
         } else {
-          echo "No entries";
+          echo "<p style='padding-left:10%;'> No entries </p>";
         }
         $conn->close();
         ?>
@@ -207,15 +221,19 @@
           $pwd = "";
           $db = "pet_find";
           $conn = new mysqli($servername, $username, $pwd, $db);
+          $conn = new mysqli($servername, $username, $pwd, $db);
           if ($conn->connect_error)
           {
             die("Connection failed: " . $conn->connect_error);
           }
-          $sql = "SELECT type, color, weight, age, day, lat, lon,
-          contact, info FROM missing";
-          $mresult = $conn->query($sql); ?>
+          // SQL query to display the pet entries
+          $sql = "SELECT id, type, color, weight, age, day, lat, lon,
+          contact, info, display FROM missing WHERE display = 1";
+          $mresult = $conn->query($sql);
+          ?>
 
 
+          <!-- Creating the table of missing pets -->
           <table class="table table-striped pet-table">
             <thead>
               <br>
@@ -233,11 +251,13 @@
               </tr>
             </thead>
             <tbody>
+
               <?php
-              if ($result->num_rows > 0)
+              if ($mresult->num_rows > 0)
               {
                 while ($row = $mresult->fetch_assoc())
                 {
+                  $id = $row["id"];
                   $type = $row["type"];
                   $color = $row["color"];
                   $weight = $row["weight"];
@@ -247,14 +267,17 @@
                   $lon = $row["lon"];
                   $contact = $row["contact"];
                   $info = $row["info"];
-                  $customURL = "moreInfo.php?type=$type&color=$color"
+                  $moreInfoURL = "moreInfo.php?type=$type&color=$color"
                   . "&weight=$weight&age=$age&day=$day"
                   . "&lat=$lat&lon=$lon&contact=$contact"
                   . "&info=$info";
 
+
+
+
                   // This is the code that creates the missing pet table
                   echo "<tr><td>$type</td><td>$color</td><td>$weight kg</td><td>$age yrs</td><td>$day</td><td>$lat
-                  </td><td>$lon</td><td>$contact</td><td><a href='$customURL'>View</a></td></tr>";
+                  </td><td>$lon</td><td>$contact</td><td><a href='$moreInfoURL'>View</a></td></tr>";
 
                   // This is the code that creates the JSON for the missing pet pins
                   // for the map
@@ -275,7 +298,7 @@
                 }
                 $missingpetjson = $missingpetjson . "]};";
               } else {
-                echo "No entries";
+                echo "<p style='padding-left:10%;'> No entries </p>";
               }
               $conn->close();
               ?>
@@ -292,7 +315,6 @@
                 zoom: 3
               });
 
-              // code from the next step will go here!
               var foundgeojson = <?php echo $foundpetjson ?>;
               var missinggeojson = <?php echo $missingpetjson ?>;
 

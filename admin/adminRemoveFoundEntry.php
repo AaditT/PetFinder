@@ -31,7 +31,8 @@
       }
 
       // sql to delete a record
-      $sql = "DELETE FROM found WHERE id=$id";
+      $displaySetting = FALSE;
+      $sql = "UPDATE found SET display=0 WHERE id=$id";
 
       if ($conn->query($sql) === TRUE) {
         echo "<p> Entry deleted successfully </p>";

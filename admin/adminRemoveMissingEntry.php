@@ -30,9 +30,9 @@
         die("<p> Issue with the connection: " . $conn->connect_error . "</p>");
       }
 
-      // sql to delete a record
-      $sql = "DELETE FROM missing WHERE id=$id";
-
+      $displaySetting = FALSE;
+      $sql = "UPDATE missing SET display=0 WHERE id=$id";
+      
       if ($conn->query($sql) === TRUE) {
         echo "<p> Entry deleted successfully </p>";
       } else {
