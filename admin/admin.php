@@ -9,7 +9,7 @@
   <a href="../index.php"> &lt; Home </a> <br> <br>
   <div class="outer-component">
     <?php
-
+    include 'adminConfig.php';
     // This avoids error on the admin page
     if (isset($_POST["username"])) {
       $username = $_POST["username"];
@@ -26,8 +26,8 @@
 
     // This makes sure that the admin is logged in
     // Or if the user wants to go back to the admin page
-    if ((($username != "admin") ||
-    ($password != "root"))
+    if ((($username != $adminUsername) ||
+    ($password != $adminPassword))
     &&
     (!isset($_GET["back"]))
   ) {

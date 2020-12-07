@@ -15,11 +15,11 @@ var config = {
   MAPBOX_API_KEY: 'enter your API key here';
 }
 ```
-6. Use admin page with username `admin` and password `root` to delete entries
+6. Use admin page with username `admin` and password `root` to delete entries. You can change these values in `admin/adminConfig.php`
 7. Have fun!
 
 ## Self-Evaluation
-I am really proud of the Mapbox feature which was really interesting to develop
+I like the Mapbox feature which was really interesting to develop
 because I had to build a customized JavaScript query for the API using PHP data.
 In the future, I plan on working on a method to automate the connection process.
 It would be nice to have the petowner and pet"finder" connect on the website
