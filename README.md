@@ -25,6 +25,9 @@ In the future, I plan on working on a method to automate the connection process.
 It would be nice to have the petowner and pet"finder" connect on the website
 instead on relying on contact phone numbers.
 
+## New Updates
+I added user authentication. Now users have to be logged in to report found or missing pets. Additionally, when a user finds a missing pet, the user can go to their profile and remove their previous entry to avoid future confusion.
+
 ## Images
 
 1. View all pet entries <br>
