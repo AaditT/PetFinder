@@ -7,7 +7,7 @@ Web Apps, Period 2
 # Styling purposes
 echo "
 <head>
-	<link rel='stylesheet' href='../style/style.css'>
+<link rel='stylesheet' href='../style/style.css'>
 </head>
 ";
 
@@ -40,7 +40,7 @@ if (!empty($username) && !empty($passwd)) {
 
 	# New account has been created
 	echo '<div class="form-outer">
-    <div class="entry-form">';
+	<div class="entry-form">';
 	echo '<p> Successfully created new account </p>';
 	echo '<p> Your User ID: ' . $newId . '</p>';
 	echo '<p> Your Username: ' . $username . '</p>';
@@ -48,7 +48,7 @@ if (!empty($username) && !empty($passwd)) {
 }
 else {
 	echo '<div class="form-outer">
-    <div class="entry-form">';
+	<div class="entry-form">';
 	echo '<p> Please enter both your username and password </p>';
 	echo '</div></div>';
 }

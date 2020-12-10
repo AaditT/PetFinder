@@ -32,7 +32,7 @@
 
       $displaySetting = FALSE;
       $sql = "UPDATE missing SET display=0 WHERE id=$id";
-      
+
       if ($conn->query($sql) === TRUE) {
         echo "<p> Entry deleted successfully </p>";
       } else {

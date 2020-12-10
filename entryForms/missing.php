@@ -16,12 +16,12 @@
 
       // Checks if user is logged in
       session_start();
-      	if(!isset($_SESSION['username'])) {
-      		header("Location: ../userAuth/loginForm.html");
-      	} else {
-          $displayName = $_SESSION['name'];
-          $account_id = $_SESSION['username'];
-        }
+      if(!isset($_SESSION['username'])) {
+        header("Location: ../userAuth/loginForm.html");
+      } else {
+        $displayName = $_SESSION['name'];
+        $account_id = $_SESSION['username'];
+      }
       $type = $_GET["type"];
       $color = $_GET["color"];
       $weight = $_GET["weight"];

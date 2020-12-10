@@ -6,14 +6,14 @@
 </head>
 <body>
   <?php
-    require('../config.php');
-    session_start();
-      if(!isset($_SESSION['username'])) {
-        header("Location: ../userAuth/loginForm.html");
-      } else {
-        $displayName = $_SESSION['name'];
-        $account_id = $_SESSION['username'];
-      }
+  require('../config.php');
+  session_start();
+  if(!isset($_SESSION['username'])) {
+    header("Location: ../userAuth/loginForm.html");
+  } else {
+    $displayName = $_SESSION['name'];
+    $account_id = $_SESSION['username'];
+  }
   ?>
   <h1> Removed a Found Entry </h1>
   <a href="../index.php"> &lt; Home </a> <br>
@@ -31,7 +31,7 @@
       if ($conn->connect_error) {
         die("<p> Issue with the connection: " . $conn->connect_error . "</p>");
       }
-
+      
       if ($conn->query($sql) === TRUE) {
         echo "<p> Entry deleted successfully </p>";
       } else {
@@ -40,7 +40,7 @@
 
       $conn->close();
 
-      
+
 
       ?>
     </div>

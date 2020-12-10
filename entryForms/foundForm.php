@@ -6,14 +6,14 @@
   <link href="../style/style.css" rel="stylesheet">
 </head>
 <?php
-  // Checks if user is logged in
-  session_start();
-  	if(!isset($_SESSION['username'])) {
-  		header("Location: ../userAuth/loginForm.html");
-  	} else {
-      $displayName = $_SESSION['name'];
-    }
- ?>
+// Checks if user is logged in
+session_start();
+if(!isset($_SESSION['username'])) {
+  header("Location: ../userAuth/loginForm.html");
+} else {
+  $displayName = $_SESSION['name'];
+}
+?>
 <body>
   <h1> Hi <?php echo $displayName . "," ?> report a pet you found! </h1>
   <a href="../index.php"> &lt; Home </a> <br> <br>

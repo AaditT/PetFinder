@@ -133,15 +133,15 @@
     <div class="report">
       <?php
       session_start();
-      	if(isset($_SESSION['username'])) {
-          $displayName = $_SESSION['name'];
-          echo '<p style="padding-left:10%;"> Signed in as: ' . $displayName . '</p>';
-          echo'<a href="userProfile/myProfile.php"> My Profile </a> <br><br>';
-        } else {
-          echo '<p style="padding-left:10%;"> Not signed in </p>';
-          echo '<a href="userAuth/loginForm.html"> Login </a><br>';
-          echo '<a href="userAuth/signupForm.html"> Signup </a><br><br>';
-        }
+      if(isset($_SESSION['username'])) {
+        $displayName = $_SESSION['name'];
+        echo '<p style="padding-left:10%;"> Signed in as: ' . $displayName . '</p>';
+        echo'<a href="userProfile/myProfile.php"> My Profile </a> <br><br>';
+      } else {
+        echo '<p style="padding-left:10%;"> Not signed in </p>';
+        echo '<a href="userAuth/loginForm.html"> Login </a><br>';
+        echo '<a href="userAuth/signupForm.html"> Signup </a><br><br>';
+      }
       ?>
       <a href="entryForms/foundForm.php"> Report a found pet </a> <br>
       <a href="entryForms/missingForm.php"> Report a missing pet </a> <br> <br>
@@ -216,11 +216,7 @@
         $missingpetjson = "
         {type: 'FeatureCollection',
           features: [";
-          $servername = "localhost";
-          $username = "root";
-          $pwd = "";
-          $db = "pet_find";
-          $conn = new mysqli($servername, $username, $pwd, $db);
+          include 'config.php';
           $conn = new mysqli($servername, $username, $pwd, $db);
           if ($conn->connect_error)
           {
@@ -345,13 +341,13 @@
                 .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
                 .addTo(map);
               });
-            </script>
+              </script>
 
 
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
 
-        <br> <br> <a href='admin/adminLogin.php'>Admin</a>
-      </body>
-      </html>
+          <br> <br> <a href='admin/adminLogin.php'>Admin</a>
+        </body>
+        </html>

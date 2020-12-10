@@ -1,4 +1,4 @@
 <?php
-  $adminUsername = "admin";
-  $adminPassword = "root";
+$adminUsername = "admin";
+$adminPassword = "root";
 ?>

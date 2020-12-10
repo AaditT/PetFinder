@@ -32,7 +32,7 @@
       echo "<p class='label'> Contact Number</p>:<p class='value'> $contact </p><br><br>";
       echo "<p class='label'> Additional Info</p>:<p class='value'> $info </p><br><br>";
 
-
+      
       ?>
     </div>
   </div>
