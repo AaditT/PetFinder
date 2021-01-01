@@ -301,7 +301,7 @@
 
               <script>
               // Amazing tutorial : https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
-              mapboxgl.accessToken = config.MAPBOX_API_KEY;
+              mapboxgl.accessToken = 'enter API key here';
 
               // This is the JS code that creates the map
               var map = new mapboxgl.Map({
