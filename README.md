@@ -11,7 +11,7 @@ Find the code and `README.md` at https://github.com/AaditT/PetFinder
 4. Create an API Key at [Mapbox](https://www.mapbox.com/)
 5. Add API Key to line 304:
 ```
-'enter your API key here';
+mapboxgl.accessToken = 'enter your API key here';
 ```
 6. Use admin page with username `admin` and password `root` to delete entries. You can change these values in `admin/adminConfig.php`
 7. Have fun!
