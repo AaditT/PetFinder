@@ -6,8 +6,8 @@ Find the code and `README.md` at https://github.com/AaditT/PetFinder
 ## Instructions
 
 1. Download the GitHub repository `$ git clone https://github.com/AaditT/PetFind` and move folder to XAMPP directory
-2. Run the SQL code in `sql/petFindSQL.sql` in phpMyAdmin within a new `petfinder_AT` database
-3. Create a user `petfinder_user` with password `B1yzGnrtqYUJnL8j` in phpMyAdmin for the `petfinder_AT` database
+2. Run the SQL code in `sql/petFindSQL.sql` in phpMyAdmin within a new `petFinder_AT` database
+3. Create a user `petfinder_user` with password `B1yzGnrtqYUJnL8j` in phpMyAdmin for the `petFinder_AT` database
 4. Create an API Key at [Mapbox](https://www.mapbox.com/)
 5. Create a file `config.js` and enter the following code:
 ```
