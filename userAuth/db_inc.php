@@ -5,18 +5,14 @@ Web Apps, Period 2
 
 <?php
 
-# My SQL Info
-$host = 'localhost';
-$user = 'petfinder_user';
-$passwd = 'B1yzGnrtqYUJnL8j';
-$schema = 'petFinder_AT';
+include '../config.php';
 $pdo = NULL;
 
-$dsn = 'mysql:host=' . $host . ';dbname=' . $schema;
+$dsn = 'mysql:host=' . $servername . ';dbname=' . $db;
 
 try
 {
-   $pdo = new PDO($dsn, $user,  $passwd);
+   $pdo = new PDO($dsn, $user,  $pwd);
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e)
