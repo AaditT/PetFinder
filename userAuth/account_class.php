@@ -63,7 +63,7 @@ class Account
 			{
 				throw new Exception('Username already exists');
 			}
-			$query = 'INSERT INTO pet_find.accounts (account_name, account_passwd) VALUES (:name, :passwd)';
+			$query = 'INSERT INTO petFinder_AT.accounts (account_name, account_passwd) VALUES (:name, :passwd)';
 			$hash = password_hash($passwd, PASSWORD_DEFAULT);
 			$values = array(':name' => $name, ':passwd' => $hash);
 			try
@@ -73,6 +73,7 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
 			return $pdo->lastInsertId();
@@ -88,7 +89,7 @@ class Account
 			}
 
 			# Deleting account from SQL database
-			$query = 'DELETE FROM pet_find.accounts WHERE (account_id = :id)';
+			$query = 'DELETE FROM petFinder_AT.accounts WHERE (account_id = :id)';
 			$values = array(':id' => $id);
 			try
 			{
@@ -97,9 +98,10 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
-			$query = 'DELETE FROM pet_find.account_sessions WHERE (account_id = :id)';
+			$query = 'DELETE FROM petFinder_AT.account_sessions WHERE (account_id = :id)';
 			$values = array(':id' => $id);
 			try
 			{
@@ -108,6 +110,7 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
 		}
@@ -135,7 +138,7 @@ class Account
 			{
 				throw new Exception('User name already used');
 			}
-			$query = 'UPDATE pet_find.accounts SET account_name = :name, account_passwd = :passwd, account_enabled = :enabled WHERE account_id = :id';
+			$query = 'UPDATE petFinder_AT.accounts SET account_name = :name, account_passwd = :passwd, account_enabled = :enabled WHERE account_id = :id';
 			$hash = password_hash($passwd, PASSWORD_DEFAULT);
 			$intEnabled = $enabled ? 1 : 0;
 			$values = array(':name' => $name, ':passwd' => $hash, ':enabled' => $intEnabled, ':id' => $id);
@@ -146,6 +149,7 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
 		}
@@ -166,7 +170,7 @@ class Account
 			}
 
 			# Saving the login into the SQL Database
-			$query = 'SELECT * FROM pet_find.accounts WHERE (account_name = :name) AND (account_enabled = 1)';
+			$query = 'SELECT * FROM petFinder_AT.accounts WHERE (account_name = :name) AND (account_enabled = 1)';
 			$values = array(':name' => $name);
 			try
 			{
@@ -175,6 +179,7 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
 			$row = $res->fetch(PDO::FETCH_ASSOC);
@@ -240,7 +245,7 @@ class Account
 			if (session_status() == PHP_SESSION_ACTIVE)
 			{
 				$query =
-				'SELECT * FROM pet_find.account_sessions, pet_find.accounts WHERE (account_sessions.session_id = :sid) ' .
+				'SELECT * FROM petFinder_AT.account_sessions, petFinder_AT.accounts WHERE (account_sessions.session_id = :sid) ' .
 				'AND (account_sessions.login_time >= (NOW() - INTERVAL 6 DAY)) AND (account_sessions.account_id = accounts.account_id) ' .
 				'AND (accounts.account_enabled = 1)';
 				$values = array(':sid' => session_id());
@@ -251,6 +256,7 @@ class Account
 				}
 				catch (PDOException $e)
 				{
+					echo $e;
 					throw new Exception('Database query error');
 				}
 				$row = $res->fetch(PDO::FETCH_ASSOC);
@@ -275,7 +281,7 @@ class Account
 			$this->authenticated = FALSE;
 			if (session_status() == PHP_SESSION_ACTIVE)
 			{
-				$query = 'DELETE FROM pet_find.account_sessions WHERE (session_id = :sid)';
+				$query = 'DELETE FROM petFinder_AT.account_sessions WHERE (session_id = :sid)';
 				$values = array(':sid' => session_id());
 				try
 				{
@@ -284,6 +290,7 @@ class Account
 				}
 				catch (PDOException $e)
 				{
+					echo $e;
 					throw new Exception('Database query error');
 				}
 			}
@@ -299,7 +306,7 @@ class Account
 			}
 			if (session_status() == PHP_SESSION_ACTIVE)
 			{
-				$query = 'DELETE FROM pet_find.account_sessions WHERE (session_id != :sid) AND (account_id = :account_id)';
+				$query = 'DELETE FROM petFinder_AT.account_sessions WHERE (session_id != :sid) AND (account_id = :account_id)';
 				$values = array(':sid' => session_id(), ':account_id' => $this->id);
 				try
 				{
@@ -308,6 +315,7 @@ class Account
 				}
 				catch (PDOException $e)
 				{
+					echo $e;
 					throw new Exception('Database query error');
 				}
 			}
@@ -319,7 +327,7 @@ class Account
 			global $pdo;
 
 			$id = NULL;
-			$query = 'SELECT account_id FROM pet_find.accounts WHERE (account_name = :name)';
+			$query = 'SELECT account_id FROM petFinder_AT.accounts WHERE (account_name = :name)';
 			$values = array(':name' => $name);
 			try
 			{
@@ -328,6 +336,7 @@ class Account
 			}
 			catch (PDOException $e)
 			{
+				echo $e;
 				throw new Exception('Database query error');
 			}
 			$row = $res->fetch(PDO::FETCH_ASSOC);
@@ -347,7 +356,7 @@ class Account
 			if (session_status() == PHP_SESSION_ACTIVE)
 			{
 				# Saves the session in SQL Database
-				$query = 'REPLACE INTO pet_find.account_sessions (session_id, account_id, login_time) VALUES (:sid, :accountId, NOW())';
+				$query = 'REPLACE INTO petFinder_AT.account_sessions (session_id, account_id, login_time) VALUES (:sid, :accountId, NOW())';
 				$values = array(':sid' => session_id(), ':accountId' => $this->id);
 				try
 				{
@@ -356,6 +365,7 @@ class Account
 				}
 				catch (PDOException $e)
 				{
+					echo $e;
 					throw new Exception('Database query error');
 				}
 			}
