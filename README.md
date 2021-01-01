@@ -9,11 +9,9 @@ Find the code and `README.md` at https://github.com/AaditT/PetFinder
 2. Run the SQL code in `sql/petFinder_AT.sql` in phpMyAdmin within a new `petFinder_AT` database
 3. Create a user `petfinder_user` with password `B1yzGnrtqYUJnL8j` in phpMyAdmin for the `petFinder_AT` database
 4. Create an API Key at [Mapbox](https://www.mapbox.com/)
-5. Create a file `config.js` and enter the following code:
+5. Add API Key to line 304:
 ```
-var config = {
-  MAPBOX_API_KEY: 'enter your API key here';
-}
+'enter your API key here';
 ```
 6. Use admin page with username `admin` and password `root` to delete entries. You can change these values in `admin/adminConfig.php`
 7. Have fun!
