@@ -7,9 +7,9 @@ Web Apps, Period 2
 
 # My SQL Info
 $host = 'localhost';
-$user = 'Pet_Us3r';
-$passwd = 'i89oUYsl0X8sgo3c';
-$schema = 'pet_find';
+$user = 'petfinder_user';
+$passwd = 'B1yzGnrtqYUJnL8j';
+$schema = 'petfinder_AT';
 $pdo = NULL;
 
 $dsn = 'mysql:host=' . $host . ';dbname=' . $schema;
