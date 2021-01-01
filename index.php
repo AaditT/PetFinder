@@ -160,7 +160,7 @@
           <th>Latitude</th>
           <th>Longitude</th>
           <th>Contact Number</th>
-          <th>Additonal Info</th>
+          <th>Additional Info</th>
         </tr>
       </thead>
       <tbody>
