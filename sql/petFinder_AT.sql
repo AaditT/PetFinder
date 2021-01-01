@@ -39,9 +39,7 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`account_id`, `account_name`, `account_passwd`, `account_reg_time`, `account_enabled`) VALUES
-(1, 'AaditUs3r', '$2y$10$3s7WvROcJyD8Ciam1FncF.PfoSv8dISjaq0Xn/r9S.vSJkD0dH.xm', '2020-12-05 01:54:14', 1),
-(2, 'TaylorR', '$2y$10$Ki5P23ZyVNxjJlw7f0jakuIjb/0/slT7jj7GO3QzJvuaG869EtLdG', '2020-12-05 23:10:12', 1);
+
 
 -- --------------------------------------------------------
 
@@ -59,12 +57,6 @@ CREATE TABLE `account_sessions` (
 -- Dumping data for table `account_sessions`
 --
 
-INSERT INTO `account_sessions` (`session_id`, `account_id`, `login_time`) VALUES
-('3412d049e95c3489a33aa91eee4d6ee0', 1, '2020-12-05 07:38:07'),
-('4e1b7ca1d2b654c3b2c0c0d6bdc108f0', 1, '2020-12-05 02:21:42'),
-('64847b7054444d254fd4df15723c93a1', 1, '2020-12-05 01:54:53'),
-('6a7237460ea2dad263affa54f023371e', 2, '2020-12-05 23:13:50'),
-('f27c9a845b2f11938da166966569db2c', 1, '2020-12-07 20:20:59');
 
 -- --------------------------------------------------------
 
@@ -91,10 +83,6 @@ CREATE TABLE `found` (
 -- Dumping data for table `found`
 --
 
-INSERT INTO `found` (`id`, `type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`, `account_id`, `display`) VALUES
-(14, 'Dog', 'Black', '10', '12', '2020-09-09', '-79', '36', '111-111-2222', '', 1, 0),
-(15, 'Dog', 'Black', '', '', '2020-09-24', '', '', '000-111-2222', '', 1, 0),
-(16, 'Dog', 'Black', '10', '10', '2020-12-16', '-79.01', '35.02', '111-222-2221', '', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -121,9 +109,6 @@ CREATE TABLE `missing` (
 -- Dumping data for table `missing`
 --
 
-INSERT INTO `missing` (`id`, `type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`, `account_id`, `display`) VALUES
-(13, 'Dog', 'Black', '', '', '2020-10-15', '-79', '36', '222-333-3311', '', 1, 0),
-(14, 'Dog', 'Black', '10', '20', '2020-12-02', '-78', '36', '111-222-1122', '', 1, 1);
 
 --
 -- Indexes for dumped tables
