@@ -3,6 +3,7 @@ Aadit Trivedi
 Web Apps, Period 2
 -->
 
+
 <?php
 
 include '../config.php';
@@ -12,7 +13,7 @@ $dsn = 'mysql:host=' . $servername . ';dbname=' . $db;
 
 try
 {
-   $pdo = new PDO($dsn, $user,  $pwd);
+   $pdo = new PDO($dsn, $username,  $pwd);
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e)
