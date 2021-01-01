@@ -9,7 +9,7 @@ Find the code and `README.md` at https://github.com/AaditT/PetFinder
 2. Run the SQL code in `sql/petFinder_AT.sql` in phpMyAdmin within a new `petFinder_AT` database
 3. Create a user `petfinder_user` with password `B1yzGnrtqYUJnL8j` in phpMyAdmin for the `petFinder_AT` database
 4. Create an API Key at [Mapbox](https://www.mapbox.com/)
-5. Add API Key to line 304:
+5. Add API Key to line 304 of `index.php`:
 ```
 mapboxgl.accessToken = 'enter your API key here';
 ```
