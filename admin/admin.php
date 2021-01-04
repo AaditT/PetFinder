@@ -35,10 +35,7 @@
   }
 
   // Connecting to the database
-  $servername = "localhost";
-  $username = "root";
-  $pwd = "";
-  $db = "pet_find";
+  include '../config.php';
   $conn = new mysqli($servername, $username, $pwd, $db);
   if ($conn->connect_error)
   {
