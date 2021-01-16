@@ -15,6 +15,7 @@
       require('../config.php');
 
       // Checks if user is logged in
+
       session_start();
       if(!isset($_SESSION['username'])) {
         header("Location: ../userAuth/loginForm.html");
@@ -22,15 +23,18 @@
         $displayName = $_SESSION['name'];
         $account_id = $_SESSION['username'];
       }
-      $type = $_GET["type"];
-      $color = $_GET["color"];
-      $weight = $_GET["weight"];
-      $age = $_GET["age"];
-      $day = $_GET["day"];
-      $lat = $_GET["lat"];
-      $lon = $_GET["lon"];
-      $contact = $_GET["contact"];
-      $info = $_GET["info"];
+
+      $message = "";
+      $target_path = null;
+      $savePath = null;
+
+      $type = $_POST["type"];
+
+      $day = $_POST["day"];
+      $lat = $_POST["lat"];
+      $lon = $_POST["lon"];
+      $contact = $_POST["contact"];
+      $info = $_POST["info"];
       // echo "<tr><td>$type</td><td>$color</td><td>$weight</td><td>$age</td><td>$day</td><td>$lat
       // </td><td>$lon</td><td>$contact</td></tr>";
 
@@ -39,10 +43,37 @@
       {
         die("Connection failed: " . $conn->connect_error);
       }
+
+      if (
+        (isset($_FILES['file'])) &&
+        (
+          (basename( $_FILES['file']['name']) != "") ||
+          (basename( $_FILES['file']['name']) != null)
+          )
+          )
+          {
+
+        $target_path = "imageUploads/";
+        $target_path = $target_path . time() . '_' . basename( $_FILES['file']['name']);
+        if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+            $message = "The file ".  basename( $_FILES['file']['name']).
+            " has been uploaded";
+        } else{
+            $message = "There was an error uploading the file, please try again!";
+        }
+        $savePath = "http://www.petfinder.epizy.com/entryForms/" . $target_path;
+
+      }
+
+
+
       $displaySetting = TRUE;
-      $sql = "INSERT INTO `missing` (`type`, `color`, `weight`, `age`, `day`, `lat`, `lon`, `contact`, `info`, `account_id`, `display`) VALUES
-      ('$type', '$color', '$weight', '$age', '$day', '$lat', '$lon', '$contact', '$info', '$account_id', '$displaySetting')";
+      $sql = "INSERT INTO `missing` (`type`, `day`, `lat`, `lon`, `contact`, `info`, `account_id`, `display`, `filepath`) VALUES
+      ('$type', '$day', '$lat', '$lon', '$contact', '$info', '$account_id', '$displaySetting', '$savePath')";
       if ($conn->query($sql) === TRUE) {
+        if ($savePath != null) {
+          echo "<img src='$savePath' width='20%' height='auto'><br><br>";
+        }
         echo "<p class='label'> Type</p><p class='value'> $type </p><br><br>";
         echo "<p class='label'> Color</p>:<p class='value'> $color </p><br><br>";
         echo "<p class='label'> Weight (kg)</p>:<p class='value'> $weight </p><br><br>";
